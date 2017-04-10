@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="F:\AndroidThings\SuperMarketNav\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f19d33ec06a8aa58e6495f275607f7ea684d11c2">
+        <dex dex="F:\AndroidThings\SuperMarketNav\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_7adc84482c96cf8392e559e701055c46d3b69d3c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="F:\AndroidThings\SuperMarketNav\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="F:\AndroidThings\SuperMarketNav\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_9a6caaa4e973256c35b90556a29ef612e4f1e32b\classes.dex" />
+    </item>
+
+</items>
