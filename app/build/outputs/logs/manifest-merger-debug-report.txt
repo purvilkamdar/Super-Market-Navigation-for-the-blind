@@ -1,0 +1,121 @@
+-- Merging decision tree log ---
+manifest
+ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:2:1-40:12
+	package
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:3:5-47
+		INJECTED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml
+		INJECTED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml
+		INJECTED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml
+		INJECTED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:6:22-76
+uses-permission#android.permission.CAMERA
+ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:7:5-65
+	android:name
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:7:22-62
+uses-feature#android.hardware.camera
+ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:8:5-60
+	android:name
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:8:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:9:5-70
+	android:name
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:9:19-67
+application
+ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:13:5-38:19
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Admin\.android\build-cache\dd5c528a2ac691e5f03d637feb236dde4dfcf427\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.0] C:\Users\Admin\.android\build-cache\8ba62df5107643bb3232c4be65fb50afeac69725\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\Admin\.android\build-cache\470660e8c5de5fa94dac9a25e4a2b69b0d6fa3a8\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\Admin\.android\build-cache\c3f89189633ed9f747abe099477d519db8bea7f1\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\Admin\.android\build-cache\1f0d2f26401b87e1f4aa4ea52e4ceef24ff64d88\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\Admin\.android\build-cache\7d992e37bb049c4cf319c7d21c6f3457e476ddf1\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Admin\.android\build-cache\d7485c02011682da64c0c789eab28cd489a63371\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Admin\.android\build-cache\22b52947e449e07b5cf12098213ef15970d411d4\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.0] C:\Users\Admin\.android\build-cache\c22906e866fda4cfe2e0671ee5aa6ade8ef158a7\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Admin\.android\build-cache\ebfc45b080ed99bf8d7b3f06707ba7a0e7c24b62\output\AndroidManifest.xml:9:5-20
+	android:label
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:16:9-41
+	android:supportsRtl
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:18:9-35
+	android:roundIcon
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:17:9-54
+	android:allowBackup
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:14:9-35
+	android:icon
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:15:9-43
+	android:theme
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:19:9-40
+uses-library#com.google.android.things
+ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:21:9-65
+	android:name
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:21:23-63
+activity#com.example.admin.supermarketnav.MainActivity
+ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:24:9-37:20
+	android:name
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:24:19-47
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:25:13-29:29
+action#android.intent.action.MAIN
+ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:26:17-69
+	android:name
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:26:25-66
+category#android.intent.category.LAUNCHER
+ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:28:17-77
+	android:name
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:28:27-74
+intent-filter#android.intent.action.MAIN+android.intent.category.DEFAULT+android.intent.category.IOT_LAUNCHER
+ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:31:13-35:29
+category#android.intent.category.IOT_LAUNCHER
+ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:33:17-80
+	android:name
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:33:27-78
+category#android.intent.category.DEFAULT
+ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:34:17-75
+	android:name
+		ADDED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml:34:27-73
+uses-sdk
+INJECTED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Admin\.android\build-cache\dd5c528a2ac691e5f03d637feb236dde4dfcf427\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.3.0] C:\Users\Admin\.android\build-cache\8ba62df5107643bb3232c4be65fb50afeac69725\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\Admin\.android\build-cache\470660e8c5de5fa94dac9a25e4a2b69b0d6fa3a8\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\Admin\.android\build-cache\c3f89189633ed9f747abe099477d519db8bea7f1\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\Admin\.android\build-cache\1f0d2f26401b87e1f4aa4ea52e4ceef24ff64d88\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\Admin\.android\build-cache\7d992e37bb049c4cf319c7d21c6f3457e476ddf1\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Admin\.android\build-cache\d7485c02011682da64c0c789eab28cd489a63371\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Admin\.android\build-cache\22b52947e449e07b5cf12098213ef15970d411d4\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.0] C:\Users\Admin\.android\build-cache\c22906e866fda4cfe2e0671ee5aa6ade8ef158a7\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Admin\.android\build-cache\ebfc45b080ed99bf8d7b3f06707ba7a0e7c24b62\output\AndroidManifest.xml:5:5-7:41
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Admin\.android\build-cache\dd5c528a2ac691e5f03d637feb236dde4dfcf427\output\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml
+		INJECTED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml
+		INJECTED from F:\AndroidThings\SuperMarketNav\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Admin\.android\build-cache\dd5c528a2ac691e5f03d637feb236dde4dfcf427\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.0] C:\Users\Admin\.android\build-cache\8ba62df5107643bb3232c4be65fb50afeac69725\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\Admin\.android\build-cache\470660e8c5de5fa94dac9a25e4a2b69b0d6fa3a8\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\Admin\.android\build-cache\c3f89189633ed9f747abe099477d519db8bea7f1\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\Admin\.android\build-cache\1f0d2f26401b87e1f4aa4ea52e4ceef24ff64d88\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\Admin\.android\build-cache\7d992e37bb049c4cf319c7d21c6f3457e476ddf1\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Admin\.android\build-cache\d7485c02011682da64c0c789eab28cd489a63371\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Admin\.android\build-cache\22b52947e449e07b5cf12098213ef15970d411d4\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.0] C:\Users\Admin\.android\build-cache\c22906e866fda4cfe2e0671ee5aa6ade8ef158a7\output\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Admin\.android\build-cache\dd5c528a2ac691e5f03d637feb236dde4dfcf427\output\AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Admin\.android\build-cache\dd5c528a2ac691e5f03d637feb236dde4dfcf427\output\AndroidManifest.xml:26:9-47
