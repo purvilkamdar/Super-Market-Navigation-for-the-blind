@@ -32,8 +32,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="69dp"
-        android:layout_height="25dp"
+        android:layout_width="349dp"
+        android:layout_height="192dp"
         app:srcCompat="@android:color/black"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -52,13 +52,13 @@
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="628dp"
-        android:layout_height="186dp"
+        android:layout_width="120dp"
+        android:layout_height="65dp"
         android:ems="10"
         android:inputType="textMultiLine"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="-39dp"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="259dp" />
 
 </android.support.constraint.ConstraintLayout>

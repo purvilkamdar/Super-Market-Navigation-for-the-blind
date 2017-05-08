@@ -35,8 +35,8 @@ import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
 public class Camera extends Activity{
 
-    private static int IMAGE_WIDTH;
-    private static int IMAGE_HEIGHT;
+    public static int IMAGE_WIDTH;
+    public static int IMAGE_HEIGHT;
     private static int MAX_IMAGES = 1;
     private static final String TAG = "Camera.java";
     private static Camera cam=null;
@@ -49,10 +49,10 @@ public class Camera extends Activity{
     public void initCam(Activity act, Context context,
                         Handler backgroundHandler,
                         ImageReader.OnImageAvailableListener imageListener) {
-        if(ContextCompat.checkSelfPermission(context,"Manifest.permission.Camera")==PERMISSION_GRANTED){
+        if(ContextCompat.checkSelfPermission(context,Manifest.permission.CAMERA)==PERMISSION_GRANTED && ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)==PERMISSION_GRANTED){
 
         }else{
-            ActivityCompat.requestPermissions(act, new String[] {Manifest.permission.CAMERA}, 1);
+            ActivityCompat.requestPermissions(act, new String[] {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
         }
         CameraManager manager = (CameraManager) context.getSystemService(CAMERA_SERVICE);
 
