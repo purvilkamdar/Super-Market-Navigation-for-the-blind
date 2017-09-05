@@ -49,7 +49,7 @@ public class Camera extends Activity{
     public void initCam(Activity act, Context context,
                         Handler backgroundHandler,
                         ImageReader.OnImageAvailableListener imageListener) {
-        if(ContextCompat.checkSelfPermission(context,Manifest.permission.CAMERA)==PERMISSION_GRANTED && ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)==PERMISSION_GRANTED){
+        if(ContextCompat.checkSelfPermission(context,Manifest.permission.CAMERA)==PERMISSION_GRANTED && ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)==PERMISSION_GRANTED && ContextCompat.checkSelfPermission(context,Manifest.permission.INTERNET)==PERMISSION_GRANTED){
 
         }else{
             ActivityCompat.requestPermissions(act, new String[] {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);

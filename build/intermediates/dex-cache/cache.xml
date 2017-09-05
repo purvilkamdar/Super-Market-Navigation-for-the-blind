@@ -3,48 +3,174 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Admin\.android\build-cache\8d15000b384976657b85ae9272d4cf3f70d7d8bd\output\jars\classes.jar"
+        jar="/Users/purvilkamdar/.android/build-cache/74b25dc43deb4801d05bd44288196e123e0f38de/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="fbb206f7a119f66ce171d95aae1225a5b209a8b7">
-        <dex dex="F:\AndroidThings\SuperMarketNav\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d7ea0a7e5b71520d9335b112de556a583730d082\classes.dex" />
+        sha1="5cc5ef8347a6bafa14556cbd35230aa9b3431bb0">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ff2a4b44653dd38ba92c79c5ce0801a951ff5216/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Admin\.android\build-cache\2aa074502dc6eeb36d71efea65e5c042e5d7c34a\output\jars\classes.jar"
+        jar="/Users/purvilkamdar/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="9ab787a20aae245b5b3651ae0b9c38459eb37715">
-        <dex dex="F:\AndroidThings\SuperMarketNav\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_09ef07ac0340be0ea081d9299704ea82f06fe5d5\classes.dex" />
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_2d7525d9447997ae9b43f920540e2e10717d4cbf/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="F:\AndroidThings\SuperMarketNav\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="/Users/purvilkamdar/.android/build-cache/c51da19706a7a3aff800b7819ee3da3f459d3f7f/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="7720e5ed9ecdeec8365d37296831855702ef2a40">
-        <dex dex="F:\AndroidThings\SuperMarketNav\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_7adc84482c96cf8392e559e701055c46d3b69d3c\classes.dex" />
+        sha1="93c10d68ab5ea070f15782ae6d3a28d1f1d8f45e">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ede0d7e338f39f0066c116583ea62de8b293af5b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Admin\.android\build-cache\73684623ceb30697efe2e30b2d63fc0fa69e7cfe\output\jars\classes.jar"
+        jar="/Users/purvilkamdar/.android/build-cache/6cb8d98026cb46dde0f9f85ccb613618f75cb056/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="a3e61044038fb54cddf6b8dc79f41d2b57f42caf">
-        <dex dex="F:\AndroidThings\SuperMarketNav\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d6549ada72bf0a749613706aaee84d673986fb15\classes.dex" />
+        sha1="d6a04527c17597019dad82777c5094a3d60d1c33">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_dbc27220ba665fa844bf5ed5ae2ecbb0c256aadc/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="F:\AndroidThings\SuperMarketNav\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="/Users/purvilkamdar/.android/build-cache/f3a567783b58e2022bf84d461d8903380ba0421a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="518768f3200963fbfec652f498da2c9d39245234">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7e58a30ec2566b1e974095e79c033f478b357349/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
-        <dex dex="F:\AndroidThings\SuperMarketNav\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_9a6caaa4e973256c35b90556a29ef612e4f1e32b\classes.dex" />
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_93534e3bca6059e0d008f80d85c910717af81e5f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/purvilkamdar/.android/build-cache/908c5b472c1bbd0c4bbd6159c11ef051a6256567/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2f355c8decc7b1db1ffac97e129d845b32b07b60/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/purvilkamdar/.android/build-cache/6a89150561c500b06c566ee2ea30cf703e29d74b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="93c1199fcb0a34b980e6fff8350daff62e696ec2">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4693bb1bfc6d209371762a359aa28f6bf3a9744a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/purvilkamdar/.android/build-cache/985e4a96c3e87058f368a414972b8eedb46d4074/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4b746ef0fd46acb5aaf3d9ab9a4cec22c28d3211">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_77cb6ae25b22a13b40fd0aa9a8bd55bd3f5cf7a5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/purvilkamdar/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.0/support-annotations-25.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dd84903d2e1af25a6081ef9038ad863cb14ca3a0">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.0_07d5acd6fe44e40ec4a4167f4314005d7c5f0dc8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/purvilkamdar/.android/build-cache/9a558033c564a7712fd815238eb7139fafd758ff/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="70f23cb87278f89aa51e6f57e8f0fd5266572d95">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2c777593250b439d7ba7f007ab8ea17ce67c96e7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/purvilkamdar/.android/build-cache/4d1e8c9e800d4f905cb6e35c32b37e99079d76e3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9ab787a20aae245b5b3651ae0b9c38459eb37715">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a7d3af92feac260c3a0c8de7a91cecad35762bcd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/purvilkamdar/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.9/386a4339ffe52d5d63e80f9bed8d2b1d1a418249/android-async-http-1.4.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/android-async-http-1.4.9_a9eecd41cd826147de2e18ca9f3d46f00bdbeb29/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0cdfc41a832b7384119cd591a2279994ca3c584a">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_aebfb82caa993b72627a9d34f08a18527036f6cd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/purvilkamdar/.android/build-cache/188cd74c7131f34fe630c47d7f1c34d307363723/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fbb206f7a119f66ce171d95aae1225a5b209a8b7">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ec0eec8503b194278502623346cb68d3ff8a3450/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/purvilkamdar/.android/build-cache/7c4efb8dc51ffc986a13294530a24e1026c4fa6a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a3e61044038fb54cddf6b8dc79f41d2b57f42caf">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_931b21a9463b42acaa8f6a6886b5b5e5260b82c0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/purvilkamdar/.android/build-cache/5e5211695436353c74fd018f34c582645e2e5ac1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e83fa9c4818849f8854a5fbd157c91614de64fca/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/purvilkamdar/.android/build-cache/175cfc76fe47d03378d572b36cbae57c065069ef/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="425c7b17887e5c3f8cbdf67ba171bc246f29b42c">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2c57d7f634cfc0ffb170b315c4b4c85aa90ca47c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/purvilkamdar/.gradle/caches/modules-2/files-2.1/cz.msebera.android/httpclient/4.3.6/526a9f794eab830eae4f23a62c572878b3f491ab/httpclient-4.3.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
+        <dex dex="/Users/purvilkamdar/Desktop/Studies/CMPE295_A/Super-Market-Navigation-for-the-blind/Super-Market-Navigation-for-the-blind/app/build/intermediates/transforms/dex/debug/folders/1000/10/httpclient-4.3.6_8f7fa09f3095e0c93e01d8041ab7f7b142f65135/classes.dex" />
     </item>
 
 </items>
