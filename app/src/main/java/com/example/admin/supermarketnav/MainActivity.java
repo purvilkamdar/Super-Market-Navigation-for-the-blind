@@ -1,11 +1,17 @@
 package com.example.admin.supermarketnav;
 
 import android.Manifest;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.Image;
 import android.media.ImageReader;
+import android.net.wifi.ScanResult;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -33,6 +39,7 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 
 import android.annotation.SuppressLint;
@@ -56,12 +63,16 @@ import java.io.EOFException;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.lang.Process;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -102,10 +113,16 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    private WifiManager wifiManager;
+    private List<ScanResult> ls;
+    private HashMap<String, String> resultlist;
+    private Context context;
+    private HashMap<String,String> WifiList;
+    private boolean wifi_flag;
 
 
-            static int MPU9250_ADDRESS = 0x68;
-            static int MAG_ADDRESS = 0x0C;
+    static int MPU9250_ADDRESS = 0x68;
+    static int MAG_ADDRESS = 0x0C;
 
     static int    GYRO_FULL_SCALE_250_DPS =   0x00;
     static int    GYRO_FULL_SCALE_500_DPS  =  0x08;
@@ -133,9 +150,9 @@ public class MainActivity extends AppCompatActivity {
     RequestParams params = new RequestParams();
     String imgPath, fileName;
     Bitmap bitmap;
-    private UploadDatatoGraph clear;
-    private UploadDatatoGraph acc;
-    private UploadDatatoGraph gyr;
+    //private UploadDatatoGraph clear;
+    //private UploadDatatoGraph acc;
+    //private UploadDatatoGraph gyr;
 
     private EditText et;
     private Handler mBackgroundHandler;
@@ -197,6 +214,111 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception ex) {
         } // for now eat exceptions
         return "";
+    }
+
+// For connecting to Wifi
+
+    public void WifiConnect()
+    {
+
+            wifi_flag=false;
+            //String ssid="Gujarat";
+            //String password="4206pppancaks";
+            Log.w("Wifi", "Inside Wifi Connect");
+            try {
+
+                WifiList = new HashMap<String, String>();
+                WifiList.put("Gujarat", "4206pppancaks");
+                WifiList.put("Purvil Kamdar's iPhone", "1234567890");
+                WifiList.put("SJSU_premier", "$Purvil92");
+
+                wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+                wifiManager.setWifiEnabled(true);
+                resultlist = new HashMap<String, String>();
+                //Log.w("Intermdeiate:","::");
+                registerReceiver(new BroadcastReceiver() {
+                    @Override
+                    public void onReceive(Context context, Intent intent) {
+                        try {
+
+                            Log.w("Wifi Scan:", "Starting Wifi Scan");
+                            ls = wifiManager.getScanResults();
+
+                            Log.w("WIFI Scan:", "Scan Results size:" + ls.size());
+
+                            for (ScanResult result : ls) {
+                                //Log.w("Wifi Result:", ls.get(i).toString());
+                                resultlist.put(result.SSID, result.capabilities);
+                            }
+
+                            //wifi_flag=true;
+                            if(!wifi_flag)
+                                connect_to_Wifi(resultlist);
+                            //if(resultlist.containsKey("Gujarat"))
+                            //Log.w("Wifi Scan:","Gujarat:"+resultlist.get("Gujarat"));
+                        } catch (Exception e) {
+                            Log.w("Exception in Wifi Scan:", e.getMessage().toString());
+                        }
+                    }
+                }, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+                wifiManager.startScan();
+                //connect_to_Wifi(resultlist);
+            } catch (Exception e) {
+                Log.w("WIFI", e.getMessage().toString());
+            }
+        }
+
+            public void connect_to_Wifi(HashMap<String,String>resultlist)
+            {
+                wifi_flag=true;
+                try
+                {
+                    String ssid = "";
+                    String password = "";
+                    if (resultlist.containsKey("Gujarat")) {
+                        ssid = "Gujarat";
+                        password = WifiList.get("Gujarat");
+
+
+                    } else if (resultlist.containsKey("Purvil Kamdar's iPhone")) {
+                        ssid = "Purvil Kamdar's iPhone";
+                        password = WifiList.get("Purvil Kamdar's iPhone");
+                    }
+                    else
+                    {
+                        Log.w("Wifi:","Result list did not find any known Wifi Networks");
+                    }
+                    Log.w("Wifi:","Connected to SSID:"+ssid+"Password:"+password);
+
+                    String args = "am startservice  --user 0 -n com.google.wifisetup/.WifiSetupService -a WifiSetupService.Connect -e ssid " + ssid + " -e passphrase " + password + "";
+
+                    Runtime runtime = Runtime.getRuntime();
+                    Process process = runtime.exec(args);
+
+                    //wifiReceiver = new WifiReceiver();
+
+
+                    InputStream is = process.getErrorStream();
+
+                    InputStreamReader isr = new InputStreamReader(is);
+                    BufferedReader br = new BufferedReader(isr);
+                    String line;
+
+                    while ((line = br.readLine()) != null) {
+
+                        Log.i("WIFI:", "" + line);
+                    }
+
+                    Thread.sleep(1000);
+                    WifiInfo wi = (WifiInfo) wifiManager.getConnectionInfo();
+                    if (wi.getNetworkId() == -1) {
+                        wifiManager.setWifiEnabled(false);
+                    }
+
+            }
+            catch(Exception e) {
+                Log.w("WIFI error:",e);
+            }
     }
 
 
@@ -301,11 +423,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        clear = new UploadDatatoGraph();
+        try
+        {
+            context=getApplicationContext();
+        }
+        catch (Exception e)
+        {
+            Log.w("Context Error:","Cannot get Appkication Context");
+        }
+        WifiConnect();
+        //connect_to_Wifi(WifiList);
+        //clear = new UploadDatatoGraph();
         clear_call[0]="clear";
-        new UploadDatatoGraph().execute(clear_call);
-        acc = new UploadDatatoGraph();
-        gyr= new UploadDatatoGraph();
+        //new UploadDatatoGraph().execute(clear_call);
+        //acc = new UploadDatatoGraph();
+        //gyr= new UploadDatatoGraph();
         setContentView(R.layout.activity_main);
         TextView ip_address = (TextView) findViewById(R.id.textView2);
         ip_address.setText(getIPAddress(true));
@@ -353,6 +485,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     //ultrasonicTriggerHandler.post(triggerRunnable);
+
+       /*
         new Thread(){
         @Override
         public void run() {
@@ -368,10 +502,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }.start();
-
+*/
 
         //Purvil's code
-        setup();
+
+        //setup();
+
+        /*
         while (true)
         {
             // _______________
@@ -435,6 +572,9 @@ public class MainActivity extends AppCompatActivity {
             }
             while (!(((int)ST1[0]&0x01)==0x01));
 */
+
+
+            /*
             // Read magnetometer data
             byte Mag[] = new byte[7];
             Mag=I2Cread(MAG_ADDRESS,0x03,7);
@@ -483,7 +623,7 @@ public class MainActivity extends AppCompatActivity {
 
 //  delay(100);
         }
-
+*/
 }
 
 
@@ -820,3 +960,4 @@ public class MainActivity extends AppCompatActivity {
         mBackgroundHandler = new Handler(mBackgroundThread.getLooper());
     }
 }
+
