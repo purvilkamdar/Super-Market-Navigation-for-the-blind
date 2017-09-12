@@ -49,11 +49,19 @@ public class Camera extends Activity{
     public void initCam(Activity act, Context context,
                         Handler backgroundHandler,
                         ImageReader.OnImageAvailableListener imageListener) {
-        if(ContextCompat.checkSelfPermission(context,Manifest.permission.CAMERA)==PERMISSION_GRANTED && ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)==PERMISSION_GRANTED && ContextCompat.checkSelfPermission(context,Manifest.permission.INTERNET)==PERMISSION_GRANTED){
+        if(ContextCompat.checkSelfPermission(context,Manifest.permission.CAMERA)==PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)==PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(context,Manifest.permission.CHANGE_WIFI_STATE)==PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(context,Manifest.permission.ACCESS_WIFI_STATE)==PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) == PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PERMISSION_GRANTED)
+        {
 
-        }else{
-            ActivityCompat.requestPermissions(act, new String[] {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
         }
+        else{
+            ActivityCompat.requestPermissions(act, new String[] {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.CHANGE_WIFI_STATE, Manifest.permission.ACCESS_WIFI_STATE}, 1);
+        }
+
         CameraManager manager = (CameraManager) context.getSystemService(CAMERA_SERVICE);
 
         String[] camIds = {};
