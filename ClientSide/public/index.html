@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple Polylines</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 80%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script>
+      //var map;
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 27,
+          center: {lat: 37.336702, lng: -121.881069}
+        });
+
+        var marker = new google.maps.Marker({
+          position: {lat: 37.336702, lng: -121.881069},
+          map: map
+        });
+
+          var poly = new google.maps.Polyline({
+              map: map,
+              path: [],
+              geodesic: true,
+              strokeColor: '#FF0000',
+              strokeOpacity: 1.0,
+              strokeWeight: 2
+          })
+
+          plot_polyline= function (payload){
+
+              /*
+             var flightPlanCoordinates = [
+             {lat: 37.336702, lng: -121.881069},
+             {lat: 37.336712, lng: -121.881079},
+             {lat: 37.336722, lng: -121.881089},
+             {lat: 37.336732, lng: -121.881099},
+             {lat: 37.336742, lng: -121.881109},
+             ];
+             */
+              //console.log("Sample payload="+flightPlanCoordinates);
+
+              //var path = poly.getPath();
+              //path.push(flightPlanCoordinates);
+              //path.path= payload;
+                  //path.push(new google.maps.LatLng(payload.lat,payload.lng));
+              //poly.setPath(path);
+              //console.log("Set Path executed");
+
+
+              flightPath = new google.maps.Polyline({
+                  path: payload, //flightPlanCoordinates,
+                  geodesic: true,
+                  strokeColor: '#FF0000',
+                  strokeOpacity: 1.0,
+                  strokeWeight: 2
+              });
+
+
+
+              flightPath.setMap(map);
+
+          }
+
+          set_marker = function(marker_payload)
+          {
+              marker.setMap(null);
+              marker=new google.maps.Marker({
+                  position: marker_payload,
+                  map: map
+              });
+
+
+          }
+
+          var coordinates=new Array();
+          coordinates.push(new google.maps.LatLng(37.336702,-121.881069));
+          var socket = io.connect('http://localhost:3000')
+          socket.on('connect', function(){console.log("Connected")});
+          socket.on('coords', function(payload){
+              var temp_payload=JSON.parse(JSON.stringify(payload));
+              var temp={'lat':parseFloat(temp_payload.lat),'lon':parseFloat(temp_payload.lon)};
+
+              //alert(JSON.stringify(YOUR_OBJECT_HERE, null, 4));
+              //console.log((JSON.stringify(temp, null, 4)));
+              set_marker(new google.maps.LatLng(temp.lat,temp.lon));
+              coordinates.push(new google.maps.LatLng(temp.lat,temp.lon));
+              //coordinates.push(temp);
+              plot_polyline(coordinates);
+          });
+
+
+      }
+      /*
+      function initialize() {
+          var map = new google.maps.Map(
+              document.getElementById("map_canvas"), {
+                  center: new google.maps.LatLng(37.4419, -122.1419),
+                  zoom: 13,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+              });
+          var poly = new google.maps.Polyline({
+              map: map,
+              path: []
+          })
+          google.maps.event.addListener(map, 'click', function(evt) {
+              // get existing path
+              var path = poly.getPath();
+              // add new point (use the position from the click event)
+              path.push(new google.maps.LatLng(evt.latLng.lat(), evt.latLng.lng()));
+              // update the polyline with the updated path
+              poly.setPath(path);
+          })
+      }
+      */
+      //google.maps.event.addDomListener(window, "load", plot_polyline);
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPwL1g9MWYb5EW2yesy9RLHk1vxc-f8uU&callback=initMap">
+    </script>
+
+  </body>
+</html>
