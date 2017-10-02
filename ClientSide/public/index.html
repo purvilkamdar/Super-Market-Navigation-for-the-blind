@@ -91,7 +91,7 @@
 
           var coordinates=new Array();
           coordinates.push(new google.maps.LatLng(37.336702,-121.881069));
-          var socket = io.connect('http://localhost:3000')
+          var socket = io.connect('http://192.168.99.100:3000')
           socket.on('connect', function(){console.log("Connected")});
           socket.on('coords', function(payload){
               var temp_payload=JSON.parse(JSON.stringify(payload));
