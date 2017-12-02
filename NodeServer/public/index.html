@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <title>Simple Polylines</title>
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+    #map {
+      height: 80%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #grad1 {
+      background: -webkit-linear-gradient(red, orange, red); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(red, orange, red); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(red, orange, red); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(red, orange, red); /* Standard syntax (must be last) */
+    }
+  </style>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="background:#ebebe0;">
+<div style="padding:0px;margin-left:30px;margin-top:0px;border:0px solid black;width:1250px">
+  <div style="border:0px solid black;margin-bottom:5px;padding:10px;border-radius:7px;background:#660033;color:white;font-size:18px;font-weight:bold;"  >Supermarket Navigation for Visually Impaired</div>
+    <div style="float:left">
+      <div id="map"  style="margin:20px;width: 710px;height: 510px;border:1px solid #ccccff;background: red"> </div>
+      <button style="width: 710px;border:0px solid black;background:#9999ff;margin-left:20px;" onclick="initMap()">Reset Map</button>
+    </div>
+    <div style="float:left;width:498px;border:0px solid black;">
+      <div style="width:180px;float:left;border:0px solid black;background:#ccccff;border-radius: 5px;">
+        <div style="width:180px;float:left;border:0px solid black;background:#ccccff;text-align: center;border-radius: 5px;color:#202060;font-size: 16px;font-weight: bold;">Compass</div>
+        <canvas id="canvas" width="150" height="150" style="margin:15px;margin-top:5px;margin-bottom:5px;background-color:#333">
+        </canvas>
+        <div style="width:180px;float:left;border:0px solid black;background:#ccccff;text-align: center;border-radius: 5px;color:#202060;font-size: 14px;font-weight: bold;">Heading</div>
+        <div id="angle" style="width:180px;float:left;border:0px solid black;background:#ccccff;text-align: center;border-radius: 5px;color:#202060;font-size: 16px;font-weight: bold;">0°</div>
+
+      </div>
+      <div style="width:305px;height:230px !important;margin-left:10px;float:left;border:0px solid black;background:#ccccff;text-align: center;border-radius: 5px;color:#202060;font-size: 16px;font-weight: bold;">
+            <div style="width:305px;float:left;border:0px solid black;background:#ccccff;text-align: center;border-radius: 5px;color:#202060;font-size: 16px;font-weight: bold;">
+              Google Vision API
+            </div>       
+            <div id="vision" style="width:285px;height:190px !important;margin:10px;float:left;border:0px solid black;background:#ccccff;text-align: center;border-radius: 5px;color:#202060;font-size: 16px;font-weight: bold;overflow-y: auto;">
+				chin=0.79239076 <br/>
+				facial hair=0.7292421 <br/>  
+				glasses=0.88269967 <br/>
+				mouth=0.6923823 <br/>
+				fun=0.5192635 <br/>
+				sunglasses=0.56487143 <br/>
+				vision care=0.8591078 <br/>
+				cool=0.6352438 <br/>
+				eyewear=0.94892436 <br/>
+
+			</div>
+
+      </div>
+    </div>
+    <div style="float:left;width:498px;height:335px !important;border:0px solid black;background:#ccccff;margin-top: 10px;border-radius: 5px;">
+    <div style="width:498px;float:left;border:0px solid black;background:#ccccff;text-align: center;border-radius: 5px;color:#202060;font-size: 16px;font-weight: bold;">Ultrasonic Sensors</div>
+      <div id="sensor" style="position:relative;top:5px;left:400px;width:50px !important;height:50px !important;border:0px solid black;z-index: 20000;">
+        L: 120<br\>
+        C: 120<br\>
+        R: 120
+
+      </div>  
+      <svg height="400" width="450" style="margin-left: 25px;border:0px solid black;">
+
+        <defs>
+          <linearGradient id="gradgreen" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:rgb(216, 255, 204);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(42, 179, 0);stop-opacity:1" />
+          </linearGradient>
+
+          <linearGradient id="gradorange" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:rgb(255, 240, 230);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(255, 102, 0);stop-opacity:1" />
+          </linearGradient>
+
+          <linearGradient id="gradred" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:rgb(255, 179, 179);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(204, 0, 0);stop-opacity:1" />
+          </linearGradient>
+        </defs>
+
+        <polygon points="200,175 200,225 250,225 250,175" style="fill:blue;stroke:blue;stroke-width:1" />
+        <polygon points="250,225 285.5,189.5 321,225 285.5,260.5" style="fill:blue;stroke:blue;stroke-width:1" />
+        <polygon points="200,225 164.5,189.5 129,225 164.5,260.5" style="fill:blue;stroke:blue;stroke-width:1" />
+
+        <!-- beams -->
+
+        <polygon id="center" points="225,175 175,50 275,50 "  fill="url(#gradgreen)"/>
+        <polygon id="right" points="303.25,207.25 356.44,83.56 426.94,154.06 "  fill="url(#gradgreen)"/>
+        <polygon id="left" points="146.75,207.25 23.06,154.06 93.56,83.56 "  fill="url(#gradgreen)"/>
+        
+
+        Sorry, your browser does not support inline SVG.
+      </svg>
+
+
+
+
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+<script>
+    //var map;
+    var cahil_lat = 37.331434;
+    var cahil_lon = -121.905350;
+
+    var mlk_lat = 37.3354626;
+    var mlk_lon =  -121.8850214;
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 21,
+            center: {lat: cahil_lat, lng: cahil_lon}
+        });
+
+        var marker = new google.maps.Marker({
+            position: {lat: cahil_lat, lng:cahil_lon},
+            map: map
+        });
+
+        var poly = new google.maps.Polyline({
+            map: map,
+            path: [],
+            geodesic: true,
+            strokeColor: '#FF0000',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+        })
+
+        plot_polyline= function (payload){
+
+          /*
+           var flightPlanCoordinates = [
+           {lat: 37.336702, lng: -121.881069},
+           {lat: 37.336712, lng: -121.881079},
+           {lat: 37.336722, lng: -121.881089},
+           {lat: 37.336732, lng: -121.881099},
+           {lat: 37.336742, lng: -121.881109},
+           ];
+           */
+            //console.log("Sample payload="+flightPlanCoordinates);
+
+            //var path = poly.getPath();
+            //path.push(flightPlanCoordinates);
+            //path.path= payload;
+            //path.push(new google.maps.LatLng(payload.lat,payload.lng));
+            //poly.setPath(path);
+            //console.log("Set Path executed");
+
+
+            flightPath = new google.maps.Polyline({
+                path: payload, //flightPlanCoordinates,
+                geodesic: true,
+                strokeColor: '#FF0000',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+
+
+
+            flightPath.setMap(map);
+
+        }
+
+        set_marker = function(marker_payload)
+        {
+            marker.setMap(null);
+            marker=new google.maps.Marker({
+
+                position: marker_payload,
+                map: map
+            });
+
+
+        }
+
+        var coordinates=new Array();
+        coordinates.push(new google.maps.LatLng(cahil_lat,cahil_lon));
+        var socket = io.connect('http://localhost:3000');
+        socket.on('connect', function(){
+            drawCompass();
+            console.log("Connected")});
+        socket.on('coords', function(payload){
+            console.log("Receievd coordinates")
+            var temp_payload=JSON.parse(JSON.stringify(payload));
+            console.log("Payload="+temp_payload.toString());
+            var temp={'lat':parseFloat(temp_payload.lat),'lon':parseFloat(temp_payload.lon)};
+            //var temp = {'lat':temp_payload.lat,'lon':temp_payload.lon};
+            console.log(temp);
+            //alert(JSON.stringify(YOUR_OBJECT_HERE, null, 4));
+            //console.log((JSON.stringify(temp, null, 4)));
+            set_marker(new google.maps.LatLng(temp.lat,temp.lon));
+            coordinates.push(new google.maps.LatLng(temp.lat,temp.lon));
+            //coordinates.push(temp);
+            plot_polyline(coordinates);
+        });
+
+        socket.on('comp',function(payload){
+            console.log("Recieved compass values with payload"+payload.toString());
+            var headi=JSON.parse(JSON.stringify(payload));
+            console.log("Headi="+headi.toString());
+            console.log("Angle="+headi);
+            drawFace(ctx,radius);
+            drawNumbers(ctx,radius);
+            drawHeading(ctx,radius,parseInt(headi));
+        });
+
+        socket.on('sensor',function(payload){
+            console.log("Recieved compass values");
+            var sensor=JSON.parse(JSON.stringify(payload));
+            testSensor(parseInt(sensor.left),parseInt(sensor.center),parseInt(sensor.right));
+        });
+
+
+    }
+    /*
+     function initialize() {
+     var map = new google.maps.Map(
+     document.getElementById("map_canvas"), {
+     center: new google.maps.LatLng(37.4419, -122.1419),
+     zoom: 13,
+     mapTypeId: google.maps.MapTypeId.ROADMAP
+     });
+     var poly = new google.maps.Polyline({
+     map: map,
+     path: []
+     })
+     google.maps.event.addListener(map, 'click', function(evt) {
+     // get existing path
+     var path = poly.getPath();
+     // add new point (use the position from the click event)
+     path.push(new google.maps.LatLng(evt.latLng.lat(), evt.latLng.lng()));
+     // update the polyline with the updated path
+     poly.setPath(path);
+     })
+     }
+     */
+    //google.maps.event.addDomListener(window, "load", plot_polyline);
+
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLhzCmXmo4lVf9uHfvSbrxs7nr6TRNPnI&callback=initMap">
+</script>
+
+
+
+
+
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var radius = canvas.height / 2;
+    ctx.translate(radius, radius);
+    radius = radius * 0.90
+
+
+    function drawCompass() {
+        var angle=Math.round((Math.random()*1000)%360);
+
+        drawFace(ctx, radius);
+        drawNumbers(ctx, radius);
+        //drawHeading(ctx, radius, angle);
+    }
+
+    function drawFace(ctx, radius) {
+        var grad;
+        ctx.beginPath();
+        ctx.arc(0, 0, radius, 0, 2*Math.PI);
+        ctx.fillStyle = 'white';
+        ctx.fill();
+        grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+        grad.addColorStop(0, '#333');
+        grad.addColorStop(0.5, 'white');
+        grad.addColorStop(1, '#333');
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = radius*0.1;
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+        ctx.fillStyle = '#333';
+        ctx.fill();
+    }
+
+    function drawNumbers(ctx, radius) {
+        var ang;
+        var num;
+        ctx.font = radius*0.12 + "px arial";
+        ctx.textBaseline="middle";
+        ctx.textAlign="center";
+        for(num = 0; num < 12; num++){
+            ang = num * Math.PI / 6;
+            ctx.rotate(ang);
+            ctx.translate(0, -radius*0.85);
+            ctx.rotate(-ang);
+            if(num==0){
+                ctx.fillText("N", 0, 0);
+            }else if(num==3){
+                ctx.fillText("E", 0, 0);
+            }else if(num==6){
+                ctx.fillText("S", 0, 0);
+            }else if(num==9){
+                ctx.fillText("W", 0, 0);
+            }else{
+                ctx.fillText((num*30).toString(), 0, 0);
+            }
+            ctx.rotate(ang);
+            ctx.translate(0, radius*0.85);
+            ctx.rotate(-ang);
+        }
+    }
+
+    function drawHeading(ctx, radius, angle){
+        var heading = angle;
+        //hour
+        document.getElementById("angle").innerHTML=""+angle+"°";
+        hand=(heading*Math.PI/(180));
+        console.log("Angle="+angle);
+        drawHand(ctx, hand, radius*0.8, radius*0.05);
+        //minute
+
+    }
+
+    function drawHand(ctx, pos, length, width) {
+        ctx.beginPath();
+        ctx.lineWidth = width;
+        ctx.lineCap = "round";
+        ctx.moveTo(0, 0);
+        ctx.rotate(pos);
+        ctx.lineTo(0, -length);
+        ctx.lineCap = "round";
+        ctx.moveTo(0,0);
+        ctx.lineTo(0, length-40)
+        ctx.stroke();
+        ctx.rotate(-pos);
+
+    }
+</script>
+<script>
+
+    function testSensor(left,center,right){
+
+        setLeftColor(left);
+        setCenterColor(center);
+        setRightColor(right);
+        document.getElementById("sensor").innerHTML="L: "+left+"<br\>C: "+center+"<br\>R: "+right;
+    }
+    function setLeftColor(val){
+        if(val<=10){
+            document.getElementById('left').setAttribute('fill', 'url(#gradred)');
+        }else if(val <=60){
+            document.getElementById('left').setAttribute('fill', 'url(#gradorange)');
+        }else{
+            document.getElementById('left').setAttribute('fill', 'url(#gradgreen)');
+        }
+    }
+    function setCenterColor(val){
+        if(val<=10){
+            document.getElementById('center').setAttribute('fill', 'url(#gradred)');
+        }else if(val <=60){
+            document.getElementById('center').setAttribute('fill', 'url(#gradorange)');
+        }else{
+            document.getElementById('center').setAttribute('fill', 'url(#gradgreen)');
+        }
+    }
+    function setRightColor(val){
+        if(val<=10){
+            document.getElementById('right').setAttribute('fill', 'url(#gradred)');
+        }else if(val <=60){
+            document.getElementById('right').setAttribute('fill', 'url(#gradorange)');
+        }else{
+            document.getElementById('right').setAttribute('fill', 'url(#gradgreen)');
+        }
+    }
+
+</script>
+
+
+
+</body>
+</html>
