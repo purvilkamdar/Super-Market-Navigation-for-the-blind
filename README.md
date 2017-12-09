@@ -13,7 +13,7 @@ DESCRIPTION
 DIRECTORY STRUCTURE
 -------------------
 - Super-Market-Navigation-for-the-blind
-|__ Extra: This directory contains Android Application project which have code that we developed as prior experiments
-|__ HardwareDevice: This directory contains Android Application project for sensor, compass, TTS and localization unit
-|__ NodeServer: NodeJS code for handling REST request and displaying data on Dashboard
-|__ Subscriber: Python code to subscribe value from Google PubSub
+- |__ Extra: This directory contains Android Application project which have code that we developed as prior experiments
+- |__ HardwareDevice: This directory contains Android Application project for sensor, compass, TTS and localization unit
+- |__ NodeServer: NodeJS code for handling REST request and displaying data on Dashboard
+- |__ Subscriber: Python code to subscribe value from Google PubSub
