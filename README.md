@@ -15,7 +15,7 @@ DIRECTORY STRUCTURE
 Super-Market-Navigation-for-the-blind<br />
 |__ Extra: This directory contains Android Application project which have code that we developed as prior experiments<br />
 |__ HardwareDevice: This directory contains Android Application project for sensor, compass, TTS and localization unit<br />
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__ src: Contains implemented Java classes <br />
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__ src: Contains implemented Java classes <br />
 |__ NodeServer: NodeJS code for handling REST request and displaying data on Dashboard<br />
 |__ Subscriber: Python code to subscribe value from Google PubSub<br />
 |__ Pedometer: C and C++ code running on FreeRTOS for step detection<br />
